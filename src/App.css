@@ -1,3 +1,8 @@
+.App {
+  text-align: center;
+  margin-top: 40px;
+}
 .error {
   border: red 2.7px solid;
 }
+
