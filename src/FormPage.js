@@ -97,7 +97,10 @@ class Pincode extends Component {
             value={this.state.state}
             style={this.props.stateInput}
           />
-        </form>
+        </form><br/>
+        <div>
+          <h3>Enter 6-digit pincode to see its details</h3>
+        </div>
       </div>
       </div>
       <Box mt={8}>
