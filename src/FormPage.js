@@ -53,10 +53,10 @@ class Pincode extends Component {
       <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div style={this.props.Container}>
-      {this.state.error ? (
-          <span className="error-display">{this.state.error}</span>
-        ) : null}
         <div style={this.props.pincodeContainer}>
+        {this.state.error ? (
+            <span className="error-display">{this.state.error}</span>
+          ) : <div><br/></div>}
         <form noValidate>
           <TextField
             variant="outlined"
