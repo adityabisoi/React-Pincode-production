@@ -7,6 +7,7 @@ class Pincode extends Component {
     this.state = {
       pincode: "",
       city: "",
+      district: "",
       state: ""
     };
   }
@@ -18,7 +19,8 @@ class Pincode extends Component {
         .then(res =>
           this.setState({
             state: res.data[0].PostOffice[0].State,
-            city: res.data[0].PostOffice[0].Region
+            city: res.data[0].PostOffice[0].Block,
+            district: res.data[0].PostOffice[0].District
           })
         )
         .then(() => {
@@ -31,6 +33,7 @@ class Pincode extends Component {
     if (e.target.value.length < 6) {
       this.setState({
         city: "",
+        district:"",
         state: ""
       });
     }
@@ -57,6 +60,15 @@ class Pincode extends Component {
             placeholder="City"
             value={this.state.city}
             style={this.props.cityInput}
+          />
+        </div>
+        <div style={this.props.districtContainer}>
+          <input
+            type="String"
+            disabled={true}
+            placeholder="District"
+            value={this.state.district}
+            style={this.props.districtInput}
           />
         </div>
         <div style={this.props.stateContainer}>
