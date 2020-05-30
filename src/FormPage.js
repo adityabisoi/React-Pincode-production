@@ -14,8 +14,7 @@ class Pincode extends Component {
       city: "",
       district: "",
       state: "",
-      error: "",
-      flag: false
+      error: ""
     };
   }
   onChange(e) {
@@ -35,14 +34,10 @@ class Pincode extends Component {
         )
         .then(() => {
           document.getElementById("pincode").classList.remove("error");
-          this.setState({
-            flag:true
-          })
         })
         .catch(err => {
           this.setState({
-            error: "Invalid PIN Code",
-            flag: false
+            error: "Invalid PIN Code"
           });
         });
     }
@@ -51,8 +46,7 @@ class Pincode extends Component {
         city: "",
         district:"",
         state: "",
-        error: "ZIP code must be of 6 digits",
-        flag: false
+        error: "ZIP code must be of 6 digits"
       });
     }
   }
@@ -122,10 +116,6 @@ class Pincode extends Component {
         <div>
           <h3>Enter 6-digit pincode to see its details</h3>
         </div>
-        {this.state.flag ? 
-        <Button onClick={() => window.location.href="https://www.google.com/maps/place/"+this.state.city} variant="outlined" color="primary">
-          Show in Google Maps
-        </Button>:<div><br/></div>}
       </div>
       </div>
     </Container>
